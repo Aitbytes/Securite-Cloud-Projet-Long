@@ -48,14 +48,14 @@ unauthorized access. Trend Micro emphasizes that such exposure can lead
 to:
 
 -   **Unauthorized Data Access**: Attackers can download proprietary
-    software or sensitive data embedded within container images. This
-    unauthorized access can result in data breaches and intellectual
-    property theft.
+    > software or sensitive data embedded within container images. This
+    > unauthorized access can result in data breaches and intellectual
+    > property theft.
 
 -   **Malware Distribution**: Malicious actors gaining access to exposed
-    registries can upload compromised images. These images, once
-    deployed, can disseminate malware across systems, posing significant
-    security threats.
+    > registries can upload compromised images. These images, once
+    > deployed, can disseminate malware across systems, posing
+    > significant security threats.
 
 **Case Study: Compromised Docker Hub Accounts and Cryptomining**
 
@@ -78,24 +78,24 @@ To safeguard container environments from such threats, Trend Micro
 recommends the following measures:
 
 -   **Implement Robust Authentication and Access Controls**: Ensure that
-    access to container registries and APIs is restricted to authorized
-    personnel only. This prevents unauthorized interactions with
-    container resources.
+    > access to container registries and APIs is restricted to
+    > authorized personnel only. This prevents unauthorized interactions
+    > with container resources.
 
 -   **Regular Monitoring and Logging**: Continuously monitor container
-    activities and maintain logs to detect and respond to suspicious
-    behaviors promptly. Proactive monitoring aids in early threat
-    detection and mitigation.
+    > activities and maintain logs to detect and respond to suspicious
+    > behaviors promptly. Proactive monitoring aids in early threat
+    > detection and mitigation.
 
 -   **Network Segmentation**: Isolate container environments from other
-    network segments to minimize potential attack surfaces. Proper
-    segmentation restricts lateral movement of threats within the
-    network.
+    > network segments to minimize potential attack surfaces. Proper
+    > segmentation restricts lateral movement of threats within the
+    > network.
 
 -   **Regular Vulnerability Scanning**: Conduct periodic scans of
-    container images and registries to identify and remediate
-    vulnerabilities. Regular assessments help maintain the integrity and
-    security of containerized applications.
+    > container images and registries to identify and remediate
+    > vulnerabilities. Regular assessments help maintain the integrity
+    > and security of containerized applications.
 
 ## Virtualization
 
@@ -109,29 +109,29 @@ on the same computer. This technology is also the target of several
 attacks
 
 -   **DoS Attacks :** A hacker can use a cloud provider to perform a
-    DDoS attack on the cloud provider itself or one of its clients.
+    > DDoS attack on the cloud provider itself or one of its clients.
 
 -   **Co-Residential Attacks :** Using side channels, a hacker can steal
-    private information from virtual machines who share the same server
-    as a malicious VM. But first, the hacker needs to co-locate one of
-    his VMs with the target VM.
+    > private information from virtual machines who share the same
+    > server as a malicious VM. But first, the hacker needs to co-locate
+    > one of his VMs with the target VM.
 
 -   **Cache-Based Side Channel Attacks :** Possible for two VMs on the
-    same computer using bare-metal hypervisor sharing highest
-    level-cache
+    > same computer using bare-metal hypervisor sharing highest
+    > level-cache
 
 -   **Hypervisor compromission :** The hypervisor is the software
-    responsible for virtualization. A compromised hypervisor may lead to
-    the compromission of all hosted virtual machines.
+    > responsible for virtualization. A compromised hypervisor may lead
+    > to the compromission of all hosted virtual machines.
 
 -   **VM Escape :** A hacker tries to exploit a fault in isolation
-    features to gain access to the host machine.
+    > features to gain access to the host machine.
 
 -   **VM Cloning :** A hacker copies the program files of a VM from the
-    host OS and then makes a clone to access sensitive data.
+    > host OS and then makes a clone to access sensitive data.
 
 -   **VM Memory Dump :** A hacker dumps the memory assigned to the
-    target VM to search for information.
+    > target VM to search for information.
 
 .**Countermeasures**
 
@@ -139,10 +139,10 @@ To mitigate the risk of co-resident attacks, researchers proposed
 various approaches
 
 -   **Preventing Side Channel Attacks :** Most SCA work with high
-    resolution internal clocks, eliminating references to internal
-    clocks will protect software from several SCA. This solution however
-    is hardware-based and costly
+    > resolution internal clocks, eliminating references to internal
+    > clocks will protect software from several SCA. This solution
+    > however is hardware-based and costly
 
 -   **Periodic Migration :** Regular migration following a VCG mechanism
-    will hinders the capacity of an attackers to perform co-residential
-    attacks
+    > will hinders the capacity of an attackers to perform
+    > co-residential attacks
