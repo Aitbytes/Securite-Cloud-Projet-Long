@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Cloud native infrastructure vulnerabilities
+  #
+
+
+  Introduction
+  #
+
+Cloud infrastructure refers to a framework that allows businesses to
+access computing resources such as servers, storage, and applications
+over the internet, distinctively differentiating it from traditional
+on-premise systems. This shift to cloud-based solutions has gained
+prominence due to the myriad benefits it offers, including :
+
+
+Enhanced flexibility,
+
+
+Scalability,
+
+
+Cost efficiency,
+
+
+The fundamental properties of cloud infrastructure encompass several key
+features:
+
+
+On-demand self-service">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/cloud_native_infrastructure_vulnerabilities/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="My New Hugo Site">
+  <meta property="og:description" content="Cloud native infrastructure vulnerabilities # Introduction # Cloud infrastructure refers to a framework that allows businesses to access computing resources such as servers, storage, and applications over the internet, distinctively differentiating it from traditional on-premise systems. This shift to cloud-based solutions has gained prominence due to the myriad benefits it offers, including :
+Enhanced flexibility,
+Scalability,
+Cost efficiency,
+The fundamental properties of cloud infrastructure encompass several key features:
+On-demand self-service">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Cloud Native Infrastructure Vulnerabilities | My New Hugo Site</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/cloud_native_infrastructure_vulnerabilities/">
+<link rel="stylesheet" href="/book.min.6c8b9d2a1fc95075ed7da46ca81060b39add8fff6741ac51259f768929281e2c.css" integrity="sha256-bIudKh/JUHXtfaRsqBBgs5rdj/9nQaxRJZ92iSkoHiw=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.521ca14d43252d774f7d145a693abc6e772c37643d5b9042edf6dd2a69920e01.js" integrity="sha256-UhyhTUMlLXdPfRRaaTq8bncsN2Q9W5BC7fbdKmmSDgE=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>My New Hugo Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/cloud_native_infrastructure_vulnerabilities/" class="active">Cloud Native Infrastructure Vulnerabilities</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/emerging_technologies__associated_risks/" class="">Emerging Technologies &amp; Associated Risks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/hints/" class="">Hints</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/key_milestones__successes__and_challenges/" class="">Key Milestones Successes and Challenges</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Cloud Native Infrastructure Vulnerabilities</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction"><strong>Introduction</strong></a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="cloud-native-infrastructure-vulnerabilities">
+  <strong>Cloud native infrastructure vulnerabilities</strong>
+  <a class="anchor" href="#cloud-native-infrastructure-vulnerabilities">#</a>
+</h1>
+<h2 id="introduction">
+  <strong>Introduction</strong>
+  <a class="anchor" href="#introduction">#</a>
+</h2>
+<p>Cloud infrastructure refers to a framework that allows businesses to
+access computing resources such as servers, storage, and applications
+over the internet, distinctively differentiating it from traditional
+on-premise systems. This shift to cloud-based solutions has gained
+prominence due to the myriad benefits it offers, including :</p>
+<ul>
+<li>
+<p>Enhanced flexibility,</p>
+</li>
+<li>
+<p>Scalability,</p>
+</li>
+<li>
+<p>Cost efficiency,</p>
+</li>
+</ul>
+<p>The fundamental properties of cloud infrastructure encompass several key
+features:</p>
+<ul>
+<li>
+<p><strong>On-demand self-service</strong></p>
+</li>
+<li>
+<p><strong>Broad network access</strong></p>
+</li>
+<li>
+<p><strong>Resource pooling</strong></p>
+</li>
+<li>
+<p><strong>Rapid elasticity</strong></p>
+</li>
+<li>
+<p><strong>Measured service</strong></p>
+</li>
+<li>
+<p><strong>Abstraction and Simplification</strong></p>
+</li>
+<li>
+<p><strong>Backup and Disaster Recovery</strong></p>
+</li>
+</ul>
+<p><strong>Self-service</strong> allows users to provision resources autonomously, while
+<strong>broad network</strong> access ensures connectivity from diverse devices.
+<strong>Resource pooling</strong> provides a shared infrastructure for multiple
+clients, and <strong>rapid elasticity</strong> enables dynamic scaling according to
+fluctuating workloads. Furthermore, the <strong>measured service</strong> model
+offers detailed monitoring of resource usage, enhancing cost management
+and operational optimization. Lastly, cloud infrastructure provides a
+level of <strong>abstraction and simplification</strong> reducing the technical
+expertise required for systems management, while <strong>backup and disaster
+recovery</strong> are also simplified, providing levels of redundancy and
+reliability that is often more robust than traditional DR solutions.</p>
+<p>Despite its advantages, the transition to cloud infrastructure is not
+without challenges. Concerns surrounding data <strong>security</strong>,
+<strong>compliance</strong>, and potential <strong>vendor lock-in</strong> remain prominent.
+Security vulnerabilities inherent to shared resources and the need for
+robust compliance frameworks can deter businesses from fully embracing
+cloud solutions.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction"><strong>Introduction</strong></a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
