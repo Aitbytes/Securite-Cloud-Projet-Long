@@ -51,7 +51,7 @@ def handle_git_operations(output_path: str) -> None:
         print("Adding new files to git...")
         subprocess.run(
             ['git', 'add', '.'],
-            cwd=output_path,
+            cwd=repo_root,
             check=True
         )
 
@@ -213,8 +213,9 @@ class GoogleDriveDownloader:
 
             # Empty the directory
             output_directory = os.path.dirname(output_path)
-            subprocess.run(['rm', output_directory+"/*"], check=True)
-            print("rm ", output_directory+"/*")
+            existing_files = os.listdir(output_directory)
+            for file in existing_files:
+                subprocess.run(['rm', file ], check=True, cwd=output_directory)
             # Save the file
             file_handle.seek(0)
             with open(output_file, 'wb') as f:
