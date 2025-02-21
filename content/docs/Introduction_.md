@@ -1,6 +1,4 @@
-# **Cloud native infrastructure vulnerabilities**
-
-## **Introduction** 
+# **Introduction** 
 
 Cloud infrastructure refers to a framework that allows businesses to
 access computing resources such as servers, storage, and applications
