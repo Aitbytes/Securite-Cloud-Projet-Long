@@ -1,6 +1,6 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Vulnérabilités dans les infrastructures dites “cloud-native”'
 theme = ["hugo-book"]
 
 BookToC = true      # Show Table of Contents
