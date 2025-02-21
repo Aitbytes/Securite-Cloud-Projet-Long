@@ -214,6 +214,7 @@ class GoogleDriveDownloader:
             # Empty the directory
             output_directory = os.path.dirname(output_path)
             subprocess.run(['rm', output_directory+"/*"], check=True)
+            print("rm ", output_directory+"/*")
             # Save the file
             file_handle.seek(0)
             with open(output_file, 'wb') as f:
