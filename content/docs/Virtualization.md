@@ -40,7 +40,7 @@ To mitigate the risk of co-resident attacks, researchers proposed
 various approaches
 
 -   **Preventing Side Channel Attacks :** Most SCA work with high
-    > resolution internal clocks, eliminating references to internal
+    > resolution internal clocks. Eliminating references to internal
     > clocks will protect software from several SCA. This solution
     > however is hardware-based and costly
 
@@ -51,4 +51,5 @@ various approaches
 
 -   **Preventing Co-Residency Verification :** To verify co-residency,
     > attackers check if their VMs and the target VM share the same Dom0
-    > IP address.
+    > IP address. If the Dom0 IP address is confined, a malicious user
+    > will have to resort
