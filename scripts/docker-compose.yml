@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  drive-watcher:
+    build: .
+    volumes:
+      - ${CREDENTIALS_FILE}:/app/creds.json
+      - ${SSH_KEY_PATH}:/home/appuser/.ssh/id_rsa:ro
+      - ${SSH_PUB_KEY_PATH}:/home/appuser/.ssh/id_rsa.pub:ro
+    environment:
+      - GIT_EMAIL=${GIT_EMAIL:-docker@example.com}
+      - GIT_NAME=${GIT_NAME:-Docker User}
