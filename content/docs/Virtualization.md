@@ -57,4 +57,4 @@ various approaches
 
 -   **Detecting Co-location attacks :** Various features can be observed
     > for anomalies in order to detect Cache-Based Side Channel Attacks,
-    > including CPU usage, RAM usage and
+    > including CPU usage, RAM usage and cache miss.
