@@ -55,4 +55,6 @@ various approaches
     > will have to resort to difficult techniques if he wants to confirm
     > co-residency.
 
--   **Detecting Co-location attacks :**
+-   **Detecting Co-location attacks :** Various features can be observed
+    > for anomalies in order to detect Cache-Based Side Channel Attacks,
+    > including CPU usage, RAM usage and
