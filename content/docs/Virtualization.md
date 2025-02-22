@@ -4,6 +4,8 @@
 
 ### Co-Resident Attack and its impact on Virtual Environment
 
+### An approach with two-stage mode to detect cache-based side channel attacks
+
 In order to implement Resource pooling and multi-tenancy, cloud
 companies started using virtualization, allowing them to run multiple OS
 on the same computer. This technology is also the target of several
@@ -58,3 +60,5 @@ various approaches
 -   **Detecting Co-location attacks :** Various features can be observed
     > for anomalies in order to detect Cache-Based Side Channel Attacks,
     > including CPU usage, RAM usage and cache miss.
+
+-   
