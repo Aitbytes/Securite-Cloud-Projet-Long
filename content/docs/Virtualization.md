@@ -67,6 +67,6 @@ various approaches
     > by a cloud provider to allocate VMs to a physical resource. Some
     > policies can increase the number of attempts an attacker needs to
     > achieve a co-residency. For example, CLR (Co-location Resistance
-    > Algorithm) open a fixed number of servers and randomly allocate a
-    > VM, or PSSF (Previously-selected-server-first) will try to
-    > allocate an user's VM to a server already used by the user.
+    > Algorithm) opens a fixed number of servers and randomly allocates
+    > a VM, or PSSF (Previously-selected-server-first) will try to
+    > allocate a user's VM to a server already used by the user.
