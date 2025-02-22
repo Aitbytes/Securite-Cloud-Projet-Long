@@ -64,4 +64,6 @@ various approaches
 -   **Allocation Policy :** An allocation policy is the policy employed
     > by a cloud provider to allocate VMs to a physical resource. Some
     > policies can increase the number of attempts an attacker needs to
-    > achieve a co-residency.
+    > achieve a co-residency. For example, CLR (Co-location Resistance
+    > Algorithm) open a fixed number of servers and randomly allocate a
+    > VM, or
