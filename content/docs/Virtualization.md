@@ -48,3 +48,5 @@ various approaches
     > will hinder the capacity of an attacker to perform co-residential
     > attacks. Drawbacks of this method include performance degradation
     > and power consumption.
+
+-   **Preventing Co-Residency Verification :**
