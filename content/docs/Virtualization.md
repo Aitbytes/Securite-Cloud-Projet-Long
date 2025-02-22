@@ -61,4 +61,4 @@ various approaches
     > for anomalies in order to detect Cache-Based Side Channel Attacks,
     > including CPU usage, RAM usage and cache miss.
 
--   
+-   **Allocations Policy :**
