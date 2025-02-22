@@ -61,4 +61,7 @@ various approaches
     > for anomalies in order to detect Cache-Based Side Channel Attacks,
     > including CPU usage, RAM usage and cache miss.
 
--   **Allocations Policy :**
+-   **Allocation Policy :** An allocation policy is the policy employed
+    > by a cloud provider to allocate VMs to a physical resource. Some
+    > policies can increase the number of attempts an attacker need to
+    > achieve a co-residency.
