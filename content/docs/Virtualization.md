@@ -49,4 +49,6 @@ various approaches
     > attacks. Drawbacks of this method include performance degradation
     > and power consumption.
 
--   **Preventing Co-Residency Verification :**
+-   **Preventing Co-Residency Verification :** To verify co-residency,
+    > attackers check if their VMs and the target VM share the same Dom0
+    > IP address.
