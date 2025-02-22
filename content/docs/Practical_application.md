@@ -6,18 +6,18 @@ Our goal is to create a standard cloud infrastructure, and leverage our
 understanding to highlight and exploit the vulnerabilities we would have
 left behind.
 
-## Setup
+## Setting up authorisations
 
 We start by creating a google cloud project :
 
-![](media/image2.png){width="5.833333333333333in"
+![](media/image3.png){width="5.833333333333333in"
 height="1.9895833333333333in"}
 
 We proceed to the IAM section to create a service account for managing
 the IAM policies.
 
   --------------------------------------------------------------------------------------------------------
-  ![](media/image3.png){width="3.7857141294838144in"   ![](media/image1.png){width="3.658241469816273in"
+  ![](media/image1.png){width="3.7857141294838144in"   ![](media/image2.png){width="3.658241469816273in"
   height="2.4843755468066493in"}                       height="2.6093755468066493in"}
   ---------------------------------------------------- ---------------------------------------------------
 
@@ -37,15 +37,14 @@ script used for that end is referenced under :
 
 Simultaneously it provides each team mate with the identical rôles.
 
-The roles granted to both the service account and the we will be needing
-afterwards are :
+The roles granted to both the service account and the teammates are :
 
--   Cloud Run Admin
+-   **Cloud Run Admin**
 
--   Cloud Run Invoker
+-   **Cloud Run Invoker**
 
--   Compute Admin
+-   **Compute Admin**
 
--   Kubernetes Engine Admin
+-   **Kubernetes Engine Admin**
 
--   Storage Admin.
+-   **Storage Admin.**
