@@ -45,5 +45,6 @@ various approaches
     > however is hardware-based and costly
 
 -   **Periodic Migration :** Regular migration following a VCG mechanism
-    > will hinders the capacity of an attackers to perform
-    > co-residential attacks
+    > will hinder the capacity of an attacker to perform co-residential
+    > attacks. Drawbacks of this method include performance degradation
+    > and power consumption.
