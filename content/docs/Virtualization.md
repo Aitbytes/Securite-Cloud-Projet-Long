@@ -63,5 +63,5 @@ various approaches
 
 -   **Allocation Policy :** An allocation policy is the policy employed
     > by a cloud provider to allocate VMs to a physical resource. Some
-    > policies can increase the number of attempts an attacker need to
+    > policies can increase the number of attempts an attacker needs to
     > achieve a co-residency.
