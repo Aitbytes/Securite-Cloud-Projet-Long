@@ -8,4 +8,9 @@ left behind.
 
 ## Setup
 
-We start by creating a new google account to benefit
+We start by creating a google cloud project :
+
+![](media/image1.png){width="5.833333333333333in"
+height="1.9895833333333333in"}
+
+\-
