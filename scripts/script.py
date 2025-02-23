@@ -212,10 +212,10 @@ class GoogleDriveDownloader:
                         previous_progress = current_progress
 
             # Empty the directory
-            output_directory = os.path.dirname(output_path)
-            existing_files = os.listdir(output_directory)
-            for file in existing_files:
-                subprocess.run(['rm', file ], check=True, cwd=output_directory)
+            # output_directory = os.path.dirname(output_path)
+            # existing_files = os.listdir(output_directory)
+            # for file in existing_files:
+            #     subprocess.run(['rm', file ], check=True, cwd=output_directory)
             # Save the file
             file_handle.seek(0)
             with open(output_file, 'wb') as f:
@@ -301,23 +301,49 @@ def segment_markdown_by_heading1(markdown):
 def process_file(file_path: str):
     """
     Process the downloaded file based on its type.
-    Currently supports DOCX files.
+    Currently supports DOCX files, by brea
     
     Args:
         file_path: Path to the file to process
     """
     output_md = file_path + '.md'
     output_directory = os.path.dirname(file_path)
-    subprocess.run(['pandoc', file_path, '-o', output_md], check=True)
+    cache_file = os.path.join(output_directory, "cache.txt")
+    subprocess.run(['pandoc', file_path, "--extract-media=./" , '-o', output_md], check=True)
     print(f"File converted to Markdown and saved to: {output_md}")
+
+    # Read the cache file if it exists
+    if os.path.exists(cache_file):
+        with open(cache_file, "r") as f:
+            cached_segments = set(f.read().splitlines())
+    else:
+        cached_segments = set()
+
+    current_segments = set()
+
     with open(output_md, "r") as f :
         markdown_content = f.read()
         segmentation = segment_markdown_by_heading1(markdown_content)
+
     for segment in segmentation :
         segment_file_path = os.path.join(output_directory,segment["title"]+".md")
+        current_segments.add(segment_file_path)
         with open(segment_file_path, "w") as f :
             f.write(segment["content"])
             print(f"Segment saved as to: {segment['title']}")
+
+    # Identify and remove files that are no longer needed
+    files_to_remove = cached_segments - current_segments
+    for file_path in files_to_remove:
+        if os.path.exists(file_path):
+            os.remove(file_path)
+            print(f"Removed outdated segment: {os.path.basename(file_path)}")
+
+    # Update the cache file
+    with open(cache_file, "w") as f:
+        f.write("\n".join(current_segments))
+
+
     subprocess.run(['rm', file_path, output_md], check=True)
 
 
