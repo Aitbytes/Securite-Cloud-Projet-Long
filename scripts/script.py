@@ -1,4 +1,5 @@
 import os
+import re
 import argparse
 import json
 from google.oauth2 import service_account
@@ -333,6 +334,13 @@ def process_file(file_path: str):
 
     with open(output_md, "r") as f :
         markdown_content = f.read().replace('.//media/image', '../media/image')
+
+        # Remove patterns like {{width=... height=...}}
+        markdown_content = re.sub(r'\{\{width=.*?height=.*?\}\}', '', markdown_content)
+
+        # Remove patterns like {.underline}
+        markdown_content = re.sub(r'\{\.\w+\}', '', markdown_content)
+
         print(markdown_content)
         segmentation = segment_markdown_by_heading1(markdown_content)
 
