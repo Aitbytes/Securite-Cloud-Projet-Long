@@ -313,13 +313,13 @@ def process_file(file_path: str):
 
 
 
-    subprocess.run(['pandoc', file_path, f"--extract-media=../" , '-o', output_md], check=True)
+    subprocess.run(['pandoc', file_path, f"--extract-media=./" , '-o', output_md], check=True)
     print(f"File converted to Markdown and saved to: {output_md}")
 
 
     if os.path.exists(media_output_directory):
         subprocess.run(['rm', '-rf', media_output_directory], check=True)
-    subprocess.run(['mv', "--force" , "../media", output_directory], check=True)
+    subprocess.run(['mv', "--force" , "./media", output_directory], check=True)
     print(f"Image directory moved to the output directory: {output_directory}/media")
 
     # Read the cache file if it exists
@@ -332,7 +332,7 @@ def process_file(file_path: str):
     current_segments = set()
 
     with open(output_md, "r") as f :
-        markdown_content = f.read()
+        markdown_content = f.read().replace('./media/', '../media/')
         segmentation = segment_markdown_by_heading1(markdown_content)
 
     for segment in segmentation :
