@@ -4,31 +4,27 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
-  Emerging Technologies &amp; Associated Risks
+  Identity &amp; Access Management (IAM)
   #
 
 
-  Containerization &amp; Microservices
+  Authentication &amp; Authorization
   #
 
 
-  Security implications of Docker (2013) and Kubernetes (2016).
+  Lessons from breaches tied to weak IAM practices.
   #
 
 
-  Managing vulnerabilities in distributed systems.
+  Role of Zero Trust frameworks in cloud environments.
   #
 
 
-  Serverless &amp; AI-Driven Environments
+  Privilege Escalation Risks
   #
 
 
-  Risks in serverless computing (AWS Lambda)
-  #
-
-
-  Exposure of APIs and data pipelines.
+  Case study: Capital One breach (2019).
   #
 
 
@@ -37,17 +33,17 @@
 ">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/emerging_technologies__associated_risks/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/identity__access_management_iam/">
   <meta property="og:site_name" content="Vulnérabilités dans les infrastructures dites “cloud-native”">
   <meta property="og:title" content="Vulnérabilités dans les infrastructures dites “cloud-native”">
-  <meta property="og:description" content="Emerging Technologies &amp; Associated Risks # Containerization &amp; Microservices # Security implications of Docker (2013) and Kubernetes (2016). # Managing vulnerabilities in distributed systems. # Serverless &amp; AI-Driven Environments # Risks in serverless computing (AWS Lambda) # Exposure of APIs and data pipelines. # #">
+  <meta property="og:description" content="Identity &amp; Access Management (IAM) # Authentication &amp; Authorization # Lessons from breaches tied to weak IAM practices. # Role of Zero Trust frameworks in cloud environments. # Privilege Escalation Risks # Case study: Capital One breach (2019). # #">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>Emerging Technologies &amp; Associated Risks | Vulnérabilités dans les infrastructures dites “cloud-native”</title>
+<title>Identity &amp; Access Management ( Iam) | Vulnérabilités dans les infrastructures dites “cloud-native”</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="http://localhost:1313/docs/emerging_technologies__associated_risks/">
+<link rel="canonical" href="http://localhost:1313/docs/identity__access_management_iam/">
 <link rel="stylesheet" href="/book.min.6c8b9d2a1fc95075ed7da46ca81060b39add8fff6741ac51259f768929281e2c.css" integrity="sha256-bIudKh/JUHXtfaRsqBBgs5rdj/9nQaxRJZ92iSkoHiw=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.feb31598e9429508c7595191286464160b5bf0bac6d10bfc242f50e8023725d9.js" integrity="sha256-/rMVmOlClQjHWVGRKGRkFgtb8LrG0Qv8JC9Q6AI3Jdk=" crossorigin="anonymous"></script>
@@ -141,7 +137,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/emerging_technologies__associated_risks/" class="active">Emerging Technologies &amp; Associated Risks</a>
+    <a href="/docs/emerging_technologies__associated_risks/" class="">Emerging Technologies &amp; Associated Risks</a>
   
 
         </li>
@@ -154,7 +150,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/identity__access_management_iam/" class="">Identity &amp; Access Management ( Iam)</a>
+    <a href="/docs/identity__access_management_iam/" class="active">Identity &amp; Access Management ( Iam)</a>
   
 
         </li>
@@ -273,7 +269,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <h3>Emerging Technologies &amp; Associated Risks</h3>
+  <h3>Identity &amp; Access Management ( Iam)</h3>
 
   <label for="toc-control">
     
@@ -291,8 +287,8 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li>
       <ul>
-        <li><a href="#containerization--microservices">Containerization &amp; Microservices</a></li>
-        <li><a href="#serverless--ai-driven-environments"><strong>Serverless &amp; AI-Driven Environments</strong></a></li>
+        <li><a href="#authentication--authorization"><strong>Authentication &amp; Authorization</strong></a></li>
+        <li><a href="#privilege-escalation-risks"><strong>Privilege Escalation Risks</strong></a></li>
         <li></li>
       </ul>
     </li>
@@ -308,33 +304,29 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h1 id="emerging-technologies--associated-risks">
-  <strong>Emerging Technologies &amp; Associated Risks</strong>
-  <a class="anchor" href="#emerging-technologies--associated-risks">#</a>
+  <article class="markdown book-article"><h1 id="identity--access-management-iam">
+  <strong>Identity &amp; Access Management (IAM)</strong>
+  <a class="anchor" href="#identity--access-management-iam">#</a>
 </h1>
-<h3 id="containerization--microservices">
-  Containerization &amp; Microservices
-  <a class="anchor" href="#containerization--microservices">#</a>
+<h3 id="authentication--authorization">
+  <strong>Authentication &amp; Authorization</strong>
+  <a class="anchor" href="#authentication--authorization">#</a>
 </h3>
-<h4 id="security-implications-of-docker-2013-and-kubernetes-2016">
-  Security implications of Docker (2013) and Kubernetes (2016).
-  <a class="anchor" href="#security-implications-of-docker-2013-and-kubernetes-2016">#</a>
+<h4 id="lessons-from-breaches-tied-to-weak-iam-practices">
+  Lessons from breaches tied to weak IAM practices.
+  <a class="anchor" href="#lessons-from-breaches-tied-to-weak-iam-practices">#</a>
 </h4>
-<h4 id="managing-vulnerabilities-in-distributed-systems">
-  Managing vulnerabilities in distributed systems.
-  <a class="anchor" href="#managing-vulnerabilities-in-distributed-systems">#</a>
+<h4 id="role-of-zero-trust-frameworks-in-cloud-environments">
+  Role of Zero Trust frameworks in cloud environments.
+  <a class="anchor" href="#role-of-zero-trust-frameworks-in-cloud-environments">#</a>
 </h4>
-<h3 id="serverless--ai-driven-environments">
-  <strong>Serverless &amp; AI-Driven Environments</strong>
-  <a class="anchor" href="#serverless--ai-driven-environments">#</a>
+<h3 id="privilege-escalation-risks">
+  <strong>Privilege Escalation Risks</strong>
+  <a class="anchor" href="#privilege-escalation-risks">#</a>
 </h3>
-<h4 id="risks-in-serverless-computing-aws-lambda">
-  Risks in serverless computing (AWS Lambda)
-  <a class="anchor" href="#risks-in-serverless-computing-aws-lambda">#</a>
-</h4>
-<h4 id="exposure-of-apis-and-data-pipelines">
-  Exposure of APIs and data pipelines.
-  <a class="anchor" href="#exposure-of-apis-and-data-pipelines">#</a>
+<h4 id="case-study-capital-one-breach-2019">
+  Case study: Capital One breach (2019).
+  <a class="anchor" href="#case-study-capital-one-breach-2019">#</a>
 </h4>
 <h3 id="">
   
@@ -383,8 +375,8 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li>
       <ul>
-        <li><a href="#containerization--microservices">Containerization &amp; Microservices</a></li>
-        <li><a href="#serverless--ai-driven-environments"><strong>Serverless &amp; AI-Driven Environments</strong></a></li>
+        <li><a href="#authentication--authorization"><strong>Authentication &amp; Authorization</strong></a></li>
+        <li><a href="#privilege-escalation-risks"><strong>Privilege Escalation Risks</strong></a></li>
         <li></li>
       </ul>
     </li>

@@ -4,50 +4,51 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
-  Emerging Technologies &amp; Associated Risks
+  Practical application
   #
 
 
-  Containerization &amp; Microservices
+  Objective
   #
 
+Our goal is to create a standard cloud infrastructure, and leverage our
+understanding to highlight and exploit the vulnerabilities we would have
+left behind.
 
-  Security implications of Docker (2013) and Kubernetes (2016).
+  Setting up authorisations
   #
 
+We start by creating a google cloud project :
+{width=&ldquo;5.833333333333333in&rdquo;
+height=&ldquo;1.9895833333333333in&rdquo;}
+We proceed to the IAM section to create a service account for managing
+the IAM policies.
 
-  Managing vulnerabilities in distributed systems.
-  #
-
-
-  Serverless &amp; AI-Driven Environments
-  #
-
-
-  Risks in serverless computing (AWS Lambda)
-  #
+{width=&ldquo;3.7857141294838144in&rdquo;   {width=&ldquo;3.6875in&rdquo;
+height=&ldquo;2.4843755468066493in&rdquo;}                         height=&ldquo;2.8333333333333335in&rdquo;}
 
 
-  Exposure of APIs and data pipelines.
-  #
-
-
-  
-  #
-">
+Once the service account is created we can export its credentials file,
+which will be the key to automating all the remaining configuration with
+IaC.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/emerging_technologies__associated_risks/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/practical_application/">
   <meta property="og:site_name" content="Vulnérabilités dans les infrastructures dites “cloud-native”">
   <meta property="og:title" content="Vulnérabilités dans les infrastructures dites “cloud-native”">
-  <meta property="og:description" content="Emerging Technologies &amp; Associated Risks # Containerization &amp; Microservices # Security implications of Docker (2013) and Kubernetes (2016). # Managing vulnerabilities in distributed systems. # Serverless &amp; AI-Driven Environments # Risks in serverless computing (AWS Lambda) # Exposure of APIs and data pipelines. # #">
+  <meta property="og:description" content="Practical application # Objective # Our goal is to create a standard cloud infrastructure, and leverage our understanding to highlight and exploit the vulnerabilities we would have left behind.
+Setting up authorisations # We start by creating a google cloud project :
+{width=“5.833333333333333in” height=“1.9895833333333333in”}
+We proceed to the IAM section to create a service account for managing the IAM policies.
+{width=“3.7857141294838144in” {width=“3.6875in” height=“2.4843755468066493in”} height=“2.8333333333333335in”}
+Once the service account is created we can export its credentials file, which will be the key to automating all the remaining configuration with IaC.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>Emerging Technologies &amp; Associated Risks | Vulnérabilités dans les infrastructures dites “cloud-native”</title>
+<title>Practical Application | Vulnérabilités dans les infrastructures dites “cloud-native”</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="http://localhost:1313/docs/emerging_technologies__associated_risks/">
+<link rel="canonical" href="http://localhost:1313/docs/practical_application/">
 <link rel="stylesheet" href="/book.min.6c8b9d2a1fc95075ed7da46ca81060b39add8fff6741ac51259f768929281e2c.css" integrity="sha256-bIudKh/JUHXtfaRsqBBgs5rdj/9nQaxRJZ92iSkoHiw=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.feb31598e9429508c7595191286464160b5bf0bac6d10bfc242f50e8023725d9.js" integrity="sha256-/rMVmOlClQjHWVGRKGRkFgtb8LrG0Qv8JC9Q6AI3Jdk=" crossorigin="anonymous"></script>
@@ -141,7 +142,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/emerging_technologies__associated_risks/" class="active">Emerging Technologies &amp; Associated Risks</a>
+    <a href="/docs/emerging_technologies__associated_risks/" class="">Emerging Technologies &amp; Associated Risks</a>
   
 
         </li>
@@ -219,7 +220,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/practical_application/" class="">Practical Application</a>
+    <a href="/docs/practical_application/" class="active">Practical Application</a>
   
 
         </li>
@@ -273,7 +274,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <h3>Emerging Technologies &amp; Associated Risks</h3>
+  <h3>Practical Application</h3>
 
   <label for="toc-control">
     
@@ -289,13 +290,8 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#containerization--microservices">Containerization &amp; Microservices</a></li>
-        <li><a href="#serverless--ai-driven-environments"><strong>Serverless &amp; AI-Driven Environments</strong></a></li>
-        <li></li>
-      </ul>
-    </li>
+    <li><a href="#objective">Objective</a></li>
+    <li><a href="#setting-up-authorisations">Setting up authorisations</a></li>
   </ul>
 </nav>
 
@@ -308,38 +304,59 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h1 id="emerging-technologies--associated-risks">
-  <strong>Emerging Technologies &amp; Associated Risks</strong>
-  <a class="anchor" href="#emerging-technologies--associated-risks">#</a>
+  <article class="markdown book-article"><h1 id="practical-application">
+  Practical application
+  <a class="anchor" href="#practical-application">#</a>
 </h1>
-<h3 id="containerization--microservices">
-  Containerization &amp; Microservices
-  <a class="anchor" href="#containerization--microservices">#</a>
-</h3>
-<h4 id="security-implications-of-docker-2013-and-kubernetes-2016">
-  Security implications of Docker (2013) and Kubernetes (2016).
-  <a class="anchor" href="#security-implications-of-docker-2013-and-kubernetes-2016">#</a>
-</h4>
-<h4 id="managing-vulnerabilities-in-distributed-systems">
-  Managing vulnerabilities in distributed systems.
-  <a class="anchor" href="#managing-vulnerabilities-in-distributed-systems">#</a>
-</h4>
-<h3 id="serverless--ai-driven-environments">
-  <strong>Serverless &amp; AI-Driven Environments</strong>
-  <a class="anchor" href="#serverless--ai-driven-environments">#</a>
-</h3>
-<h4 id="risks-in-serverless-computing-aws-lambda">
-  Risks in serverless computing (AWS Lambda)
-  <a class="anchor" href="#risks-in-serverless-computing-aws-lambda">#</a>
-</h4>
-<h4 id="exposure-of-apis-and-data-pipelines">
-  Exposure of APIs and data pipelines.
-  <a class="anchor" href="#exposure-of-apis-and-data-pipelines">#</a>
-</h4>
-<h3 id="">
-  
-  <a class="anchor" href="#">#</a>
-</h3>
+<h2 id="objective">
+  Objective
+  <a class="anchor" href="#objective">#</a>
+</h2>
+<p>Our goal is to create a standard cloud infrastructure, and leverage our
+understanding to highlight and exploit the vulnerabilities we would have
+left behind.</p>
+<h2 id="setting-up-authorisations">
+  Setting up authorisations
+  <a class="anchor" href="#setting-up-authorisations">#</a>
+</h2>
+<p>We start by creating a google cloud project :</p>
+<p><img src="./media/image3.png" alt="" />{width=&ldquo;5.833333333333333in&rdquo;
+height=&ldquo;1.9895833333333333in&rdquo;}</p>
+<p>We proceed to the IAM section to create a service account for managing
+the IAM policies.</p>
+<hr>
+<p><img src="./media/image2.png" alt="" />{width=&ldquo;3.7857141294838144in&rdquo;   <img src="./media/image1.png" alt="" />{width=&ldquo;3.6875in&rdquo;
+height=&ldquo;2.4843755468066493in&rdquo;}                         height=&ldquo;2.8333333333333335in&rdquo;}</p>
+<hr>
+<hr>
+<p>Once the service account is created we can export its credentials file,
+which will be the key to automating all the remaining configuration with
+IaC.</p>
+<p>All the configuration is referenced under in this repo :
+<a href="https://github.com/Aitbytes/Projet-Long-Infra/">[https://github.com/Aitbytes/Projet-Long-Infra/]{.underline}</a></p>
+<p>The first step consists in creating a separate service account, then
+providing it with the necessary roles for further deployments tasks. The
+script used for that end is referenced under :
+<a href="https://github.com/Aitbytes/Projet-Long-Infra/tree/main/PrepareAccounts">[https://github.com/Aitbytes/Projet-Long-Infra/tree/main/PrepareAccounts]{.underline}</a></p>
+<p>Simultaneously it provides each team mate with the identical rôles.</p>
+<p>The roles granted to both the service account and the teammates are :</p>
+<ul>
+<li>
+<p><strong>Cloud Run Admin</strong></p>
+</li>
+<li>
+<p><strong>Cloud Run Invoker</strong></p>
+</li>
+<li>
+<p><strong>Compute Admin</strong></p>
+</li>
+<li>
+<p><strong>Kubernetes Engine Admin</strong></p>
+</li>
+<li>
+<p><strong>Storage Admin.</strong></p>
+</li>
+</ul>
 </article>
  
       
@@ -381,13 +398,8 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#containerization--microservices">Containerization &amp; Microservices</a></li>
-        <li><a href="#serverless--ai-driven-environments"><strong>Serverless &amp; AI-Driven Environments</strong></a></li>
-        <li></li>
-      </ul>
-    </li>
+    <li><a href="#objective">Objective</a></li>
+    <li><a href="#setting-up-authorisations">Setting up authorisations</a></li>
   </ul>
 </nav>
 

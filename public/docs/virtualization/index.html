@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Virtualization
+  #
+
+
+  Analysis of various virtual machine attacks in cloud computing
+  #
+
+
+  Co-Resident Attack and its impact on Virtual Environment
+  #
+
+
+  An approach with two-stage mode to detect cache-based side channel attacks
+  #
+
+
+  Using Virtual Machine Allocation Policies to Defend against Co-Resident Attacks in Cloud Computing
+  #
+
+In order to implement Resource pooling and multi-tenancy, cloud
+companies started using virtualization, allowing them to run multiple OS
+on the same computer. This technology is also the target of several
+attacks">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/virtualization/">
+  <meta property="og:site_name" content="Vulnérabilités dans les infrastructures dites “cloud-native”">
+  <meta property="og:title" content="Vulnérabilités dans les infrastructures dites “cloud-native”">
+  <meta property="og:description" content="Virtualization # Analysis of various virtual machine attacks in cloud computing # Co-Resident Attack and its impact on Virtual Environment # An approach with two-stage mode to detect cache-based side channel attacks # Using Virtual Machine Allocation Policies to Defend against Co-Resident Attacks in Cloud Computing # In order to implement Resource pooling and multi-tenancy, cloud companies started using virtualization, allowing them to run multiple OS on the same computer. This technology is also the target of several attacks">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Virtualization | Vulnérabilités dans les infrastructures dites “cloud-native”</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/virtualization/">
+<link rel="stylesheet" href="/book.min.6c8b9d2a1fc95075ed7da46ca81060b39add8fff6741ac51259f768929281e2c.css" integrity="sha256-bIudKh/JUHXtfaRsqBBgs5rdj/9nQaxRJZ92iSkoHiw=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.feb31598e9429508c7595191286464160b5bf0bac6d10bfc242f50e8023725d9.js" integrity="sha256-/rMVmOlClQjHWVGRKGRkFgtb8LrG0Qv8JC9Q6AI3Jdk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Vulnérabilités dans les infrastructures dites “cloud-native”</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/compliance__regulatory_governance/" class="">Compliance &amp; Regulatory Governance</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/container_registries/" class="">Container Registries</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/core_security_challenges_in_cloud_environments/" class="">Core Security Challenges in Cloud Environments</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/emerging_technologies__associated_risks/" class="">Emerging Technologies &amp; Associated Risks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/identity__access_management_iam/" class="">Identity &amp; Access Management ( Iam)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/infrastructure__architectural_security/" class="">Infrastructure &amp; Architectural Security</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/introduction_/" class="">Introduction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/key_milestones__successes__and_challenges/" class="">Key Milestones Successes and Challenges</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/operational_resilience__cost_management/" class="">Operational Resilience &amp; Cost Management</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/practical_application/" class="">Practical Application</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/virtualization/" class="active">Virtualization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Virtualization</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#analysis-of-various-virtual-machine-attacks-in-cloud-computing">Analysis of various virtual machine attacks in cloud computing</a></li>
+        <li><a href="#co-resident-attack-and-its-impact-on-virtual-environment">Co-Resident Attack and its impact on Virtual Environment</a></li>
+        <li><a href="#an-approach-with-two-stage-mode-to-detect-cache-based-side-channel-attacks">An approach with two-stage mode to detect cache-based side channel attacks</a></li>
+        <li><a href="#using-virtual-machine-allocation-policies-to-defend-against-co-resident-attacks-in-cloud-computing">Using Virtual Machine Allocation Policies to Defend against Co-Resident Attacks in Cloud Computing</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="virtualization">
+  Virtualization
+  <a class="anchor" href="#virtualization">#</a>
+</h1>
+<h3 id="analysis-of-various-virtual-machine-attacks-in-cloud-computing">
+  Analysis of various virtual machine attacks in cloud computing
+  <a class="anchor" href="#analysis-of-various-virtual-machine-attacks-in-cloud-computing">#</a>
+</h3>
+<h3 id="co-resident-attack-and-its-impact-on-virtual-environment">
+  Co-Resident Attack and its impact on Virtual Environment
+  <a class="anchor" href="#co-resident-attack-and-its-impact-on-virtual-environment">#</a>
+</h3>
+<h3 id="an-approach-with-two-stage-mode-to-detect-cache-based-side-channel-attacks">
+  An approach with two-stage mode to detect cache-based side channel attacks
+  <a class="anchor" href="#an-approach-with-two-stage-mode-to-detect-cache-based-side-channel-attacks">#</a>
+</h3>
+<h3 id="using-virtual-machine-allocation-policies-to-defend-against-co-resident-attacks-in-cloud-computing">
+  Using Virtual Machine Allocation Policies to Defend against Co-Resident Attacks in Cloud Computing
+  <a class="anchor" href="#using-virtual-machine-allocation-policies-to-defend-against-co-resident-attacks-in-cloud-computing">#</a>
+</h3>
+<p>In order to implement Resource pooling and multi-tenancy, cloud
+companies started using virtualization, allowing them to run multiple OS
+on the same computer. This technology is also the target of several
+attacks</p>
+<ul>
+<li>
+<p><strong>DoS Attacks :</strong> A hacker can use a cloud provider to perform a
+DDoS attack on the cloud provider itself or one of its clients.</p>
+</li>
+<li>
+<p><strong>Co-Residential Attacks :</strong> Using side channels, a hacker can steal
+private information from virtual machines who share the same server
+as a malicious VM. But first, the hacker needs to co-locate one of
+his VMs with the target VM.</p>
+</li>
+<li>
+<p><strong>Cache-Based Side Channel Attacks :</strong> Possible for two VMs on the
+same computer using bare-metal hypervisor sharing highest
+level-cache</p>
+</li>
+<li>
+<p><strong>Hypervisor compromission :</strong> The hypervisor is the software
+responsible for virtualization. A compromised hypervisor may lead to
+the compromission of all hosted virtual machines.</p>
+</li>
+<li>
+<p><strong>VM Escape :</strong> A hacker tries to exploit a fault in isolation
+features to gain access to the host machine.</p>
+</li>
+<li>
+<p><strong>VM Cloning :</strong> A hacker copies the program files of a VM from the
+host OS and then makes a clone to access sensitive data.</p>
+</li>
+<li>
+<p><strong>VM Memory Dump :</strong> A hacker dumps the memory assigned to the
+target VM to search for information.</p>
+</li>
+</ul>
+<p>.<strong>Countermeasures</strong></p>
+<p>To mitigate the risk of co-resident attacks, researchers proposed
+various approaches</p>
+<ul>
+<li>
+<p><strong>Preventing Side Channel Attacks :</strong> Most SCA work with high
+resolution internal clocks. Eliminating references to internal
+clocks will protect software from several SCA. This solution however
+is hardware-based and costly</p>
+</li>
+<li>
+<p><strong>Periodic Migration :</strong> Regular migration following a VCG mechanism
+will hinder the capacity of an attacker to perform co-residential
+attacks. Drawbacks of this method include performance degradation
+and power consumption.</p>
+</li>
+<li>
+<p><strong>Preventing Co-Residency Verification :</strong> To verify co-residency,
+attackers check if their VMs and the target VM share the same Dom0
+IP address. If the Dom0 IP address is confined, a malicious user
+will have to resort to difficult techniques if he wants to confirm
+co-residency.</p>
+</li>
+<li>
+<p><strong>Detecting Co-location attacks :</strong> Various features can be observed
+for anomalies in order to detect Cache-Based Side Channel Attacks,
+including CPU usage, RAM usage and cache miss.</p>
+</li>
+<li>
+<p><strong>Allocation Policy :</strong> An allocation policy is the policy employed
+by a cloud provider to allocate VMs to a physical resource. Some
+policies can increase the number of attempts an attacker needs to
+achieve a co-residency. For example, CLR (Co-location Resistance
+Algorithm) opens a fixed number of servers and randomly allocates a
+VM, or PSSF (Previously-selected-server-first) will try to allocate
+a user&rsquo;s VM to a server already used by the user.</p>
+</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#analysis-of-various-virtual-machine-attacks-in-cloud-computing">Analysis of various virtual machine attacks in cloud computing</a></li>
+        <li><a href="#co-resident-attack-and-its-impact-on-virtual-environment">Co-Resident Attack and its impact on Virtual Environment</a></li>
+        <li><a href="#an-approach-with-two-stage-mode-to-detect-cache-based-side-channel-attacks">An approach with two-stage mode to detect cache-based side channel attacks</a></li>
+        <li><a href="#using-virtual-machine-allocation-policies-to-defend-against-co-resident-attacks-in-cloud-computing">Using Virtual Machine Allocation Policies to Defend against Co-Resident Attacks in Cloud Computing</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

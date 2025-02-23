@@ -310,11 +310,16 @@ def process_file(file_path: str):
     output_directory = os.path.dirname(file_path)
     media_output_directory = os.path.join(output_directory,"media")
     cache_file = os.path.join(output_directory, "cache.txt")
-    subprocess.run(['pandoc', file_path, f"--extract-media=./" , '-o', output_md], check=True)
+
+
+
+    subprocess.run(['pandoc', file_path, f"--extract-media=../" , '-o', output_md], check=True)
     print(f"File converted to Markdown and saved to: {output_md}")
+
+
     if os.path.exists(media_output_directory):
         subprocess.run(['rm', '-rf', media_output_directory], check=True)
-    subprocess.run(['mv', "--force" , "./media", output_directory], check=True)
+    subprocess.run(['mv', "--force" , "../media", output_directory], check=True)
     print(f"Image directory moved to the output directory: {output_directory}/media")
 
     # Read the cache file if it exists
