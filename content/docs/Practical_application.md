@@ -17,7 +17,7 @@ We proceed to the IAM section to create a service account for managing
 the IAM policies.
 
   ---------------------------------------------------------------------------------------------------
-  ![](../media/image4.png){width="3.7857141294838144in"   ![](../media/image2.png){width="3.6875in"
+  ![](../media/image2.png){width="3.7857141294838144in"   ![](../media/image3.png){width="3.6875in"
   height="2.4843755468066493in"}                          height="2.8333333333333335in"}
   ------------------------------------------------------- -------------------------------------------
 
