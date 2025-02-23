@@ -19,14 +19,14 @@ unauthorized access. Trend Micro emphasizes that such exposure can lead
 to:
 
 -   **Unauthorized Data Access**: Attackers can download proprietary
-    software or sensitive data embedded within container images. This
-    unauthorized access can result in data breaches and intellectual
-    property theft.
+    > software or sensitive data embedded within container images. This
+    > unauthorized access can result in data breaches and intellectual
+    > property theft.
 
 -   **Malware Distribution**: Malicious actors gaining access to exposed
-    registries can upload compromised images. These images, once
-    deployed, can disseminate malware across systems, posing significant
-    security threats.
+    > registries can upload compromised images. These images, once
+    > deployed, can disseminate malware across systems, posing
+    > significant security threats.
 
 **Case Study: Compromised Docker Hub Accounts and Cryptomining**
 
@@ -49,21 +49,21 @@ To safeguard container environments from such threats, Trend Micro
 recommends the following measures:
 
 -   **Implement Robust Authentication and Access Controls**: Ensure that
-    access to container registries and APIs is restricted to authorized
-    personnel only. This prevents unauthorized interactions with
-    container resources.
+    > access to container registries and APIs is restricted to
+    > authorized personnel only. This prevents unauthorized interactions
+    > with container resources.
 
 -   **Regular Monitoring and Logging**: Continuously monitor container
-    activities and maintain logs to detect and respond to suspicious
-    behaviors promptly. Proactive monitoring aids in early threat
-    detection and mitigation.
+    > activities and maintain logs to detect and respond to suspicious
+    > behaviors promptly. Proactive monitoring aids in early threat
+    > detection and mitigation.
 
 -   **Network Segmentation**: Isolate container environments from other
-    network segments to minimize potential attack surfaces. Proper
-    segmentation restricts lateral movement of threats within the
-    network.
+    > network segments to minimize potential attack surfaces. Proper
+    > segmentation restricts lateral movement of threats within the
+    > network.
 
 -   **Regular Vulnerability Scanning**: Conduct periodic scans of
-    container images and registries to identify and remediate
-    vulnerabilities. Regular assessments help maintain the integrity and
-    security of containerized applications.
+    > container images and registries to identify and remediate
+    > vulnerabilities. Regular assessments help maintain the integrity
+    > and security of containerized applications.
