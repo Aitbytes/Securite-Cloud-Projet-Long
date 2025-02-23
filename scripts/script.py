@@ -333,6 +333,7 @@ def process_file(file_path: str):
 
     with open(output_md, "r") as f :
         markdown_content = f.read().replace('./media/', '../media/')
+        print(markdown_content)
         segmentation = segment_markdown_by_heading1(markdown_content)
 
     for segment in segmentation :
