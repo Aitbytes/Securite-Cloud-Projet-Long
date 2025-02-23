@@ -314,7 +314,7 @@ def process_file(file_path: str):
 
 
 
-    subprocess.run(['pandoc', file_path, f"--extract-media=./" , '-o', output_md], check=True)
+    subprocess.run(['pandoc', file_path, f"--extract-media=./" , "-t" ,"markdown-simple_tables-multiline_tables-grid_tables", '-o', output_md], check=True)
     print(f"File converted to Markdown and saved to: {output_md}")
 
 
@@ -336,7 +336,7 @@ def process_file(file_path: str):
         markdown_content = f.read().replace('.//media/image', '../media/image')
 
         # Remove patterns like {{width=... height=...}}
-        markdown_content = re.sub(r'\{width=.*?height=.*?\}', '', markdown_content)
+        markdown_content = re.sub(r'\{\{width=.*?height=.*?\}\}', '', markdown_content)
 
         # Remove patterns like {.underline}
         markdown_content = re.sub(r'\{\.\w+\}', '', markdown_content)
