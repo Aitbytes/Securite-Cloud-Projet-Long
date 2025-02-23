@@ -332,7 +332,7 @@ def process_file(file_path: str):
     current_segments = set()
 
     with open(output_md, "r") as f :
-        markdown_content = f.read() #.replace('./media/image', '../media/image')
+        markdown_content = f.read().replace('.//media/image', '../media/image')
         print(markdown_content)
         segmentation = segment_markdown_by_heading1(markdown_content)
 
