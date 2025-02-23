@@ -10,13 +10,12 @@ left behind.
 
 We start by creating a google cloud project :
 
-![](../media/image1.png){width="5.833333333333333in"
-height="1.9895833333333333in"}
+![](../media/image3.png)
 
 We proceed to the IAM section to create a service account for managing
 the IAM policies.
 
-| ![](../media/image3.png) | ![](../media/image2.png) |
+| ![](../media/image2.png) | ![](../media/image1.png) |
 |------------------------------------|------------------------------------|
 
 Once the service account is created we can export its credentials file,
