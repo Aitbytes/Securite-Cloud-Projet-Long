@@ -1,7 +1,7 @@
 # New section
 
 Hello world. Here is a new
-image![](.//media/image3.png){width="6.267716535433071in"
+image![](../media/image4.png){width="6.267716535433071in"
 height="3.5277777777777777in"}
 
   -----------------------------------------------------------------------
