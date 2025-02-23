@@ -2,7 +2,7 @@
 
 ### Comprehensive Analysis: Security Risks of Exposed Container Registries and Compromised Docker Hub Accounts
 
-[[trendmicro.com]{.underline}](https://www.trendmicro.com/en_us/research/21/k/compromised-docker-hub-accounts-abused-for-cryptomining-linked-t.html?utm_source=chatgpt.com)
+[[trendmicro.com]](https://www.trendmicro.com/en_us/research/21/k/compromised-docker-hub-accounts-abused-for-cryptomining-linked-t.html?utm_source=chatgpt.com)
 
 The integration of container technologies into modern development
 workflows has streamlined application deployment and scalability.
