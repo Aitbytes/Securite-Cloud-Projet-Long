@@ -18,7 +18,8 @@ accessible without proper authentication, they become susceptible to
 unauthorized access. Trend Micro emphasizes that such exposure can lead
 to:
 
--  software or sensitive data embedded within container images. This
+-   **Unauthorized Data Access**: Attackers can download proprietary
+    software or sensitive data embedded within container images. This
     unauthorized access can result in data breaches and intellectual
     property theft.
 

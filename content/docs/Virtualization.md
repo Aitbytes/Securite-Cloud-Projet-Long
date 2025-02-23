@@ -14,6 +14,7 @@ on the same computer. This technology is also the target of several
 attacks
 
 -   **DoS Attacks :** A hacker can use a cloud provider to perform a
+    DDoS attack on the cloud provider itself or one of its clients.
 
 -   **Co-Residential Attacks :** Using side channels, a hacker can steal
     private information from virtual machines who share the same server
