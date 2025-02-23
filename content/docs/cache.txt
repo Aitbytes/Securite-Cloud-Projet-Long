@@ -1,11 +1,11 @@
-../content/docs/Introduction_.md
-../content/docs/Practical_application.md
 ../content/docs/Key_Milestones__Successes__and_Challenges.md
 ../content/docs/Virtualization.md
-../content/docs/Compliance_&_Regulatory_Governance.md
 ../content/docs/Core_Security_Challenges_in_Cloud_Environments.md
-../content/docs/Container_registries.md
-../content/docs/Infrastructure_&_Architectural_Security.md
-../content/docs/Operational_Resilience_&_Cost_Management.md
+../content/docs/Compliance_&_Regulatory_Governance.md
 ../content/docs/Identity_&_Access_Management_(IAM).md
+../content/docs/Container_registries.md
+../content/docs/Practical_application.md
+../content/docs/Introduction_.md
+../content/docs/Infrastructure_&_Architectural_Security.md
 ../content/docs/Emerging_Technologies_&_Associated_Risks.md
+../content/docs/Operational_Resilience_&_Cost_Management.md

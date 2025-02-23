@@ -309,7 +309,7 @@ def process_file(file_path: str):
     output_md = file_path + '.md'
     output_directory = os.path.dirname(file_path)
     cache_file = os.path.join(output_directory, "cache.txt")
-    subprocess.run(['pandoc', file_path, "--extract-media=./" , '-o', output_md], check=True)
+    subprocess.run(['pandoc', file_path, f"--extract-media={output_directory}" , '-o', output_md], check=True)
     print(f"File converted to Markdown and saved to: {output_md}")
 
     # Read the cache file if it exists
