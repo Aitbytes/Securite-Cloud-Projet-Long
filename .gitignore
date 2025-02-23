@@ -1,5 +1,5 @@
+content/docs/cache.txt
 scripts/*.json
 .env
 */secrets/*
 scripts/venv/
-content/docs/cache.txt
