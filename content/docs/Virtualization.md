@@ -57,10 +57,10 @@ various approaches
 
 -   **Preventing Co-Residency Verification :** To verify co-residency,
     > attackers check if their VMs and the target VM share the same Dom0
-    > IP address. Dom0 is a high-privilege VM used to administrate
-    > others If the Dom0 IP address is confined, a malicious user will
-    > have to resort to difficult techniques if he wants to confirm
-    > co-residency.
+    > IP address. Dom0 is a high-privilege VM used to administrate other
+    > VMs and is shared by all VMs on a physical computer. If the Dom0
+    > IP address is confined, a malicious user will have to resort to
+    > difficult techniques if he wants to confirm co-residency.
 
 -   **Detecting Co-location attacks :** Various features can be observed
     > for anomalies in order to detect Cache-Based Side Channel Attacks,
