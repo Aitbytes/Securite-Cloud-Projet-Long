@@ -14,12 +14,12 @@ our configurations easily repeatable.
 
 We start by creating a google cloud project :
 
-![](../media/image3.png)
+![](../media/image1.png)
 
 We proceed to the IAM section to create a service account for managing
 the IAM policies.
 
-| ![](../media/image1.png) | ![](../media/image2.png) |
+| ![](../media/image3.png) | ![](../media/image2.png) |
 |------------------------------------|------------------------------------|
 
 Once the service account is created we can export its credentials file,
@@ -93,4 +93,13 @@ metrics, dashboards, and alerts.
 The goal for this first lab is two folds. Learn how to build and break a
 kubernetes cluster.
 
-## Building
+## Building the cluster
+
+### Provisioning the VMs
+
+The first step of building
+
+This repo contain a multiptude of scripts for provisioning a k3s cluster
+on Proxmox :
+[[https://github.com/techno-tim/k3s-ansible]](https://github.com/techno-tim/k3s-ansible).
+After much investigating, an hours of trial and error
