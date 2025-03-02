@@ -14,12 +14,12 @@ our configurations easily repeatable.
 
 We start by creating a google cloud project :
 
-![](../media/image2.png)
+![](../media/image3.png)
 
 We proceed to the IAM section to create a service account for managing
 the IAM policies.
 
-| ![](../media/image1.png) | ![](../media/image3.png) |
+| ![](../media/image1.png) | ![](../media/image2.png) |
 |------------------------------------|------------------------------------|
 
 Once the service account is created we can export its credentials file,
@@ -99,7 +99,10 @@ kubernetes cluster.
 
 The first step of building
 
-This repo contain a multiptude of scripts for provisioning a k3s cluster
-on Proxmox :
-[[https://github.com/techno-tim/k3s-ansible]](https://github.com/techno-tim/k3s-ansible).
-After much investigating, an hours of trial and error
+### Creating the cluster using k3s
+
+The following repo :
+[[https://github.com/techno-tim/k3s-ansible]](https://github.com/techno-tim/k3s-ansible)
+contains a multitude of scripts for provisioning a k3s cluster on
+Proxmox. After much investigating, an hours of trial and error. We
+managed
