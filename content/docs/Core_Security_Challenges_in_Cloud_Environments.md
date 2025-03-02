@@ -68,7 +68,7 @@ perform brute-force attacks---systematically attempting numerous
 password combinations until the correct one was found---without
 triggering account lockouts or alerts.
 
-CloudBleed (2017)
+#### CloudBleed (2017)
 
 On February 18, 2017, at 4:11 PM PST, a security researcher from
 Google\'s Project Zero discovered a critical vulnerability in
@@ -83,7 +83,7 @@ due to a bug in how Cloudflare\'s edge servers processed HTML content.
 Worse, search engines like Google had already cached some of the leaked
 data, making it publicly accessible.
 
-#### **Initial Investigation & Mitigation Efforts**
+**Initial Investigation & Mitigation Efforts**
 
 Upon discovery, Cloudflare engineers quickly convened and correlated the
 bug with the **email obfuscation** feature, which had recently undergone
@@ -104,7 +104,7 @@ patch to disable it.
 Despite these measures, the **root cause remained unclear**, and there
 was a lingering risk of reoccurrence.
 
-#### **Root Cause Analysis**
+**Root Cause Analysis**
 
 The engineers determined that all three affected features used
 Cloudflare's **new HTML parser (cf-html)**, which replaced an older
@@ -129,8 +129,14 @@ The **new parser's migration process inadvertently triggered this
 pre-existing bug** by handling buffers differently, exposing memory that
 the old system never accessed.
 
-This incident underscores the effect of low-level memory handling bugs
-on cloud infrastructure handling world-wide traffic.
+### Takeaways
+
+These case studies highlight the diversity of attack vectors in cloud i
+of **secure configurations, proactive vulnerability management, strong
+authentication, and rapid incident response**. As cloud services and web
+applications continue to evolve, organizations must stay ahead with
+**continuous security testing and monitoring** to mitigate emerging
+threats.
 
 ### Vulnerabilities
 
