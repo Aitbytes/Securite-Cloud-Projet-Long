@@ -34,32 +34,205 @@ providing it with the necessary roles for further deployments tasks. The
 script used for that end is referenced under :
 [[https://github.com/Aitbytes/Projet-Long-Infra/tree/main/PrepareAccounts]](https://github.com/Aitbytes/Projet-Long-Infra/tree/main/PrepareAccounts)
 
-This Terraform script initially defines input variables user_emails and
-project_id, which are leveraged throughout the configuration.
+By default, managing permissions and roles in Google Cloud can be
+complex, particularly when dealing with multiple users and service
+accounts. However, using Terraform scripts simplifies this process by
+providing an infrastructure as code approach. In this article, we will
+explore how to construct a Terraform script to assign roles and manage
+IAM permissions efficiently in a Google Cloud project.
 
-The provider block specifies the Google Cloud provider, using
-credentials stored locally to authenticate and interact with the
-specified project and region.
+Step 1: Define Variables
 
-At the core of this script is the creation and management of a Google
-Cloud service account, resrc_mgr_service_account, which is designed to
-handle various administrative roles within a project. This is achieved
-using google_service_account, ensuring that the account is correctly set
-up with a unique ID and display name for clarity. The script then
-establishes IAM (Identity and Access Management) bindings using both
-local sets and dynamic iteration over user emails and predefined roles,
-thereby granting the necessary permissions to operate Google Cloud\'s
-compute, storage, and other services. The google_project_iam_member
-resources dynamically bind roles to each user specified, ensuring robust
-access control mechanisms. For enhanced control, the service account
-itself is granted essential roles through its own IAM bindings, which
-are generated for each role locally defined. Notably, the script further
-ensures that user accounts receive roles such as Service Account User
-and Service Account Admin, providing them the capability to manage and
-utilize the service account efficiently. This comprehensive approach
-simplifies the delegation of permissions, ensuring that the necessary
-configurations can be applied systematically across any number of users
-and roles within a project.
+To begin, we declare variables in Terraform to capture the list of user
+emails and the project ID for which we will be managing permissions.
+This is done using the \`variable\` block and allows flexibility in
+specifying user details and project settings outside the script itself.
+
+\`\`\`hcl
+
+variable \"user_emails\" {
+
+description = \"List of email addresses of the users\"
+
+type = list(string)
+
+}
+
+variable \"project_id\" {
+
+description = \"ID of the project\"
+
+type = string
+
+}
+
+\`\`\`
+
+Step 2: Configure the Google Provider
+
+Next, we configure the Google Cloud provider with the necessary
+credentials, project ID, and default region. This provider block is
+crucial for authenticating and interacting with Google Cloud resources.
+
+\`\`\`hcl
+
+provider \"google\" {
+
+credentials = file(\"./secrets/credentials.json\")
+
+project = var.project_id
+
+region = \"europe-west1\"
+
+}
+
+\`\`\`
+
+Step 3: Create a Service Account
+
+We create a Google Cloud service account using the \`resource\` block.
+This account will be used to manage resources within the project.
+
+\`\`\`hcl
+
+resource \"google_service_account\" \"resrc_mgr_service_account\" {
+
+account_id = \"resrc-mgr-service-account\"
+
+display_name = \"Ressource Manager Service Account\"
+
+}
+
+\`\`\`
+
+Step 4: Define IAM Roles
+
+The \`locals\` block is used to define a list of roles that we intend to
+assign to both users and the service account. It allows for an organized
+way to manage and update roles centrally.
+
+\`\`\`hcl
+
+locals {
+
+roles = \[
+
+\"roles/compute.admin\",
+
+\"roles/container.admin\",
+
+\"roles/storage.admin\",
+
+\...
+
+\]
+
+}
+
+\`\`\`
+
+Step 5: Assign Roles to Users
+
+Using the \`google_project_iam_member\` resource, we loop through each
+combination of user email and roles to create the necessary IAM
+bindings. This ensures that each user is granted the appropriate
+permissions within the project.
+
+\`\`\`hcl
+
+resource \"google_project_iam_member\" \"role_binding\" {
+
+for_each = {
+
+for pair in setproduct(var.user_emails, local.roles) :
+
+\"\${pair\[0\]}\_\${pair\[1\]}\" =\> {
+
+email = pair\[0\]
+
+role = pair\[1\]
+
+}
+
+}
+
+project = var.project_id
+
+role = each.value.role
+
+member = \"user:\${each.value.email}\"
+
+}
+
+\`\`\`
+
+Step 6: Assign Roles to the Service Account
+
+Similarly, roles are assigned to the service account itself, ensuring it
+has the required permissions to perform its intended functions within
+the infrastructure.
+
+\`\`\`hcl
+
+resource \"google_project_iam_member\" \"service_account_role_binding\"
+{
+
+for_each = toset(local.roles)
+
+project = var.project_id
+
+role = each.value
+
+member =
+\"serviceAccount:\${google_service_account.resrc_mgr_service_account.email}\"
+
+}
+
+\`\`\`
+
+Step 7: Grant Additional Permissions
+
+Finally, specific roles such as \`Service Account User\` and \`Service
+Account Admin\` are granted to user accounts to further manage and
+interact with the service account. This is vital for delegating service
+account management tasks.
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>resource "google_service_account_iam_member"
+"service_account_user_permission" {</p>
+<p>for_each = toset(var.user_emails)</p>
+<p>service_account_id =
+google_service_account.resrc_mgr_service_account.name</p>
+<p>role = "roles/iam.serviceAccountUser"</p>
+<p>member = "user:${each.value}"</p>
+<p>}</p>
+<p>resource "google_service_account_iam_member"
+"service_account_admin_permission" {</p>
+<p>for_each = toset(var.user_emails)</p>
+<p>service_account_id =
+google_service_account.resrc_mgr_service_account.name</p>
+<p>role = "roles/iam.serviceAccountAdmin"</p>
+<p>member = "user:${each.value}"</p>
+<p>}</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+\`\`\`hcl
+
+\`\`\`
+
+In conclusion, this Terraform script efficiently manages Google Cloud
+IAM roles and permissions by automating the assignment process for users
+and service accounts, providing both flexibility and security in
+large-scale cloud operations.
 
 Simultaneously it provides each team mate with the identical rôles.
 
