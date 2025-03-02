@@ -200,7 +200,7 @@ network congestion, affecting services like YouTube and Gmail.
 June 8, 2021: A misconfiguration caused a global outage, taking down
 several major news websites and retailers.
 
-[[pingdom.com]](http://pingdom.com)
+[[pingdom.com]](https://www.pingdom.com/outages/internet-outages-the-12-most-impactful/)
 
 **OVHcloud:**
 
