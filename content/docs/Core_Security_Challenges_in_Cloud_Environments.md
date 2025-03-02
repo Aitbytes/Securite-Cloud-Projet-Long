@@ -131,12 +131,11 @@ the old system never accessed.
 
 ### Takeaways
 
-These case studies highlight the diversity of attack vectors in cloud i
-of **secure configurations, proactive vulnerability management, strong
-authentication, and rapid incident response**. As cloud services and web
-applications continue to evolve, organizations must stay ahead with
-**continuous security testing and monitoring** to mitigate emerging
-threats.
+These case studies highlight the diversity of attack vectors in cloud
+environments. As cloud services and web applications continue to evolve,
+organizations must stay ahead with **continuous security testing and
+monitoring** to mitigate emerging threats. While memory safety issues
+remain a key concern, as with traditional systems
 
 ### Vulnerabilities
 
