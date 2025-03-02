@@ -50,28 +50,25 @@ controlled in cloud environments.
 On August 31, 2014, a massive leak of private celebrity photos flooded
 Reddit. These intimate images, stolen from some of the most high-profile
 actresses, models, singers, and athletes, quickly spread across the
-internet. The leak, dubbed *The Fappening*, gained immediate traction,
-with a subreddit dedicated to the images amassing over 100,000 followers
-in just 24 hours. Despite efforts to contain the spread, copies of the
-photos appeared on underground forums and other websites, dominating
-headlines for weeks.
+internet. Despite efforts to contain the spread, copies of the photos
+appeared on underground forums and other websites, dominating headlines
+for weeks.
 
 Investigations into the hack revealed that private photos had initially
-surfaced on the imageboard *4chan* and the obscure forum *Anon-IB*, both
-known for anonymously sharing explicit content. On August 26, 2014, an
-Anon-IB user claimed that members of a private group had accessed and
-obtained nude photos of Jennifer Lawrence, among other celebrities.
-Initially, the stolen photos were traded or sold in underground
-communities, with collectors amassing images in hopes of profiting.
-However, on August 31, someone decided to release the entire collection
-publicly on *4chan*, igniting the scandal.
+surfaced on the imageboard *4chan* and the obscure forum *Anon-IB*. On
+August 26, 2014, an Anon-IB user claimed that members of a private group
+had accessed and obtained nude photos of celebrities. Initially, the
+stolen photos were traded or sold in underground communities, with
+collectors amassing images in hopes of profiting. However, on August 31,
+someone decided to release the entire collection publicly on *4chan*,
+igniting the scandal.
 
 Further digging led to a secretive group within Anon-IB called *Stol*,
-consisting of several men across the United States. These individuals,
-ranging from a teacher to a bank teller, engaged in hacking and trading
-stolen private images, primarily targeting celebrities. Their methods
-involved phishing attacks, tricking victims into revealing their Apple
-iCloud credentials, granting them access to personal photo libraries.
+consisting of several men across the United States. These individuals
+engaged in hacking and trading stolen private images, primarily
+targeting celebrities. Their methods involved phishing attacks, tricking
+victims into revealing their Apple iCloud credentials, granting them
+access to personal photo libraries.
 
 The hack exposed major vulnerabilities in cloud security, prompting
 Apple to strengthen iCloud protections. Multiple individuals were
