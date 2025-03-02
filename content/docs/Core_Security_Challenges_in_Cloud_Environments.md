@@ -145,13 +145,72 @@ Meanwhile, faster deployments increase the risk of rapid exploitation
 but also enable quicker responses to threats. This is further supported
 by managed logging and monitoring.
 
-### Vulnerabilities
-
-#### Risks of misconfigured cloud settings and unauthorized access.
+#### 
 
 ### Threats to Service Reliability
 
 #### Impact of high-profile outages (e.g., AWS 2012 downtime).
+
+Cloud service providers have experienced several significant outages
+over the years, impacting various services and users worldwide. Notable
+incidents include:
+
+**Amazon Web Services (AWS):**
+
+April 20, 2011: An outage in the Northern Virginia data center affected
+services like Foursquare and Reddit.
+[[Wikipédia]](https://en.wikipedia.org/wiki/Amazon_Web_Services)
+
+June 29, 2012: A severe storm in Northern Virginia led to outages for
+several websites relying on AWS.
+
+[[Wikipédia]](https://en.wikipedia.org/wiki/Amazon_Web_Services)
+
+February 28, 2017: A human error during debugging caused a massive
+outage of S3 services in the Northern Virginia region, affecting
+numerous websites.
+
+[[Wikipédia]](https://en.wikipedia.org/wiki/Amazon_Web_Services)
+
+**Microsoft Azure:**
+
+February 29, 2012: An incorrect code for calculating leap day dates led
+to a significant outage.
+[[Wikipédia]](https://en.wikipedia.org/wiki/Microsoft_Azure?utm_source=chatgpt.com)
+
+September 4, 2018: A lightning strike caused a cooling system failure,
+resulting in a major outage in the North Europe region.
+[[Wikipédia]](https://en.wikipedia.org/wiki/Microsoft_Azure?utm_source=chatgpt.com)
+
+September 12, 2024: A change within a third-party internet service
+provider\'s environment led to a global outage affecting services like
+Word, Excel, and Teams.
+
+[[reuters.com]](https://www.reuters.com/technology/microsoft-365-down-thousands-users-downdetector-shows-2024-09-12/?utm_source=chatgpt.com)
+
+**Google Cloud:**
+
+June 2, 2019: Google Cloud experienced a significant outage due to
+network congestion, affecting services like YouTube and Gmail.
+
+[[datacenterknowledge.com]](http://datacenterknowledge.com)
+
+**Fastly**:
+
+June 8, 2021: A misconfiguration caused a global outage, taking down
+several major news websites and retailers.
+
+[[pingdom.com]](http://pingdom.com)
+
+**OVHcloud:**
+
+March 10, 2021: A fire in the Strasbourg data center destroyed one
+center and partially affected another, causing widespread disruptions.
+
+fr.wikipedia.org
+
+These incidents highlight the vulnerabilities in cloud infrastructures
+and the widespread impact such outages can have on global services.
 
 #### Mitigating risks of third-party dependencies.
 
