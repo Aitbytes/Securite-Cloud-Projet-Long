@@ -10,12 +10,12 @@ left behind.
 
 We start by creating a google cloud project :
 
-![](../media/image1.png)
+![](../media/image2.png)
 
 We proceed to the IAM section to create a service account for managing
 the IAM policies.
 
-| ![](../media/image2.png) | ![](../media/image3.png) |
+| ![](../media/image1.png) | ![](../media/image3.png) |
 |------------------------------------|------------------------------------|
 
 Once the service account is created we can export its credentials file,
@@ -34,52 +34,54 @@ Simultaneously it provides each team mate with the identical rôles.
 
 The roles granted to both the service account and the teammates are :
 
--   **Cloud Run Admin**
+-   **Compute.admin**
 
--   **Cloud Run Invoker**
+-   **Container.admin**
 
--   **Compute Admin**
+-   **Storage.admin**
 
--   **Kubernetes Engine Admin**
+-   **Run.admin**
 
--   **Storage Admin.**
+-   **Run.invoker**
 
-1\. \*\*roles/compute.admin\*\*: This role grants full control over
-Compute Engine resources, allowing users to create, modify, and delete
-virtual machines, networks, and other related resources.
+-   **Compute.instanceAdmin**
 
-2\. \*\*roles/container.admin\*\*: This role provides administrative
-access to Google Kubernetes Engine (GKE) resources, enabling users to
-manage clusters, nodes, and workloads within the container environment.
+-   **Artifactregistry.reader**
 
-3\. \*\*roles/storage.admin\*\*: This role allows users to manage Cloud
-Storage resources, including creating and deleting buckets, uploading
-and downloading objects, and setting access controls.
+-   **iam.serviceAccountUser**
 
-4\. \*\*roles/run.admin\*\*: This role grants full access to Cloud Run
-services, allowing users to deploy, update, and delete serverless
-applications.
+-   **logging.viewer**
 
-5\. \*\*roles/run.invoker\*\*: This role permits users to invoke Cloud
-Run services, enabling them to trigger serverless applications without
-having administrative access.
+-   **monitoring.viewer**
 
-6\. \*\*roles/compute.instanceAdmin.v1\*\*: This role provides
-permissions to manage Compute Engine instances, including starting,
-stopping, and modifying virtual machines.
+## Explanation of the authorisations
 
-7\. \*\*roles/artifactregistry.reader\*\*: This role allows users to
-view and list container images stored in Artifact Registry, facilitating
-access to containerized applications.
+The **compute.admin** role grants full control over Compute Engine
+resources, allowing users to create, modify, and delete virtual
+machines, networks, and other related resources. Complementing this, the
+**container.admin** role provides administrative access to Google
+Kubernetes Engine (GKE) resources, enabling users to manage clusters,
+nodes, and workloads within the container environment. Meanwhile, the
+**storage.admin** role allows users to administer Cloud Storage
+resources by creating and deleting buckets, uploading and downloading
+objects, and setting access controls. For serverless applications, the
+**run.admin** role grants comprehensive access to Cloud Run services,
+permitting users to deploy, update, and delete applications. On the
+other hand, the **run.invoker** role enables users to invoke Cloud Run
+services, allowing the triggering of serverless applications without
+administrative privileges.
 
-8\. \*\*roles/iam.serviceAccountUser\*\*: This role enables users to act
-as a service account, allowing them to execute operations on behalf of
-the service account.
+Furthermore, the **compute.instanceAdmin.v1** role provides permissions
+to manage Compute Engine instances, including operations like starting,
+stopping, and modifying virtual machines. To facilitate access to
+containerized applications, the **artifactregistry.reader** role allows
+users to view and list container images stored in Artifact Registry. The
+**iam.serviceAccountUser** role empowers users to act as a service
+account, permitting them to execute operations on behalf of the service
+account. In terms of observability, the **logging.viewer** role grants
+read-only access to view logs in Cloud Logging, while the
+**monitoring.viewer** role provides read-only access to Cloud Monitoring
+data, enabling users to monitor system performance and health by viewing
+metrics, dashboards, and alerts.
 
-9\. \*\*roles/logging.viewer\*\*: This role grants read-only access to
-view logs in Cloud Logging, enabling users to monitor and analyze
-application and system logs.
-
-10\. \*\*roles/monitoring.viewer\*\*: This role provides read-only
-access to Cloud Monitoring data, allowing users to view metrics,
-dashboards, and alerts to monitor system performance and health.
+## Running a k3s 
