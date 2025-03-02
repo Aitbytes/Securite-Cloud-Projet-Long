@@ -54,27 +54,19 @@ internet. Despite efforts to contain the spread, copies of the photos
 appeared on underground forums and other websites, dominating headlines
 for weeks.
 
-Investigations into the hack revealed that private photos had initially
-surfaced on the imageboard *4chan* and the obscure forum *Anon-IB*. On
-August 26, 2014, an Anon-IB user claimed that members of a private group
-had accessed and obtained nude photos of celebrities. Initially, the
-stolen photos were traded or sold in underground communities, with
-collectors amassing images in hopes of profiting. However, on August 31,
-someone decided to release the entire collection publicly on *4chan*,
-igniting the scandal.
+Investigations into the hack led to a secretive group within Anon-IB
+called *Stol*, consisting of several men across the United States. These
+individuals engaged in hacking and trading stolen private images,
+primarily targeting celebrities. Their methods involved phishing
+attacks, tricking victims into revealing their Apple iCloud credentials,
+granting them access to personal photo libraries.
 
-Further digging led to a secretive group within Anon-IB called *Stol*,
-consisting of several men across the United States. These individuals
-engaged in hacking and trading stolen private images, primarily
-targeting celebrities. Their methods involved phishing attacks, tricking
-victims into revealing their Apple iCloud credentials, granting them
-access to personal photo libraries.
-
-The hack exposed major vulnerabilities in cloud security, prompting
-Apple to strengthen iCloud protections. Multiple individuals were
-eventually identified and prosecuted for their roles in the breach,
-though the damage had already been done. The scandal remains one of the
-most infamous digital privacy breaches in history.
+The primary vulnerability exploited was a security flaw in Apple\'s
+\"Find My iPhone\" service, which lacked a mechanism to limit the number
+of incorrect password attempts. This absence allowed attackers to
+perform brute-force attacks---systematically attempting numerous
+password combinations until the correct one was found---without
+triggering account lockouts or alerts.
 
 CloudBleed (2017)
 
