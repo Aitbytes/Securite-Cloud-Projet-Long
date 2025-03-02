@@ -132,22 +132,18 @@ the old system never accessed.
 ### Takeaways
 
 These case studies highlight the diversity of attack vectors in cloud
-environments. As cloud services and web applications continue to evolve,
-organizations must stay ahead with **continuous security testing and
-monitoring** to mitigate emerging threats. While low-level memory safety
-issues remain a key concern, as with any software. Adequate Identity and
-Access management become increasingly crucial in cloud environments.
+environments. While low-level memory safety issues remain a key concern,
+as they do in any software, adequate identity and access management
+becomes increasingly crucial in cloud environments.
 
-In an on-premise environment, data access is often based on a defined
-network perimeter, with more static controls, limiting opportunistic
-attacks that can happen in cloud environments caracterized by broad
-network access.
+In on-premises environment, data access is often based on a defined
+network perimeter with more static controls, which limits opportunistic
+attacks more common in cloud environments characterized by broad network
+access.
 
-Meanwhile, faster deployment increases the risk of rapid exploitation,
-while simultaneously enabling rapid reaction to threats.
-
-Finally, logging and monitoring become easier to centralise in a cloud
-environment, facilitating rapid threat detection.
+Meanwhile, faster deployments increase the risk of rapid exploitation
+but also enable quicker responses to threats. This is further supported
+by managed logging and monitoring.
 
 ### Vulnerabilities
 
