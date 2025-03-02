@@ -6,16 +6,20 @@ Our goal is to create a standard cloud infrastructure, and leverage our
 understanding to highlight and exploit the vulnerabilities we would have
 left behind.
 
+Throughout the labs, we will be leveraging IaC with terraform and
+ansible extensively, as it self-documents every step, while also making
+our configurations easily repeatable.
+
 ## Setting up authorisations
 
 We start by creating a google cloud project :
 
-![](../media/image2.png)
+![](../media/image3.png)
 
 We proceed to the IAM section to create a service account for managing
 the IAM policies.
 
-| ![](../media/image1.png) | ![](../media/image3.png) |
+| ![](../media/image1.png) | ![](../media/image2.png) |
 |------------------------------------|------------------------------------|
 
 Once the service account is created we can export its credentials file,
@@ -84,4 +88,9 @@ read-only access to view logs in Cloud Logging, while the
 data, enabling users to monitor system performance and health by viewing
 metrics, dashboards, and alerts.
 
-## Running a k3s 
+## Running a k3s cluster on GCP compute engine
+
+The goal for this first lab is two folds. Learn how to build and break a
+kubernetes cluster.
+
+## Building
