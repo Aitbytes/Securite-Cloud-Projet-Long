@@ -14,12 +14,12 @@ our configurations easily repeatable.
 
 We start by creating a google cloud project :
 
-![](../media/image2.png)
+![](../media/image3.png)
 
 We proceed to the IAM section to create a service account for managing
 the IAM policies.
 
-| ![](../media/image3.png) | ![](../media/image1.png) |
+| ![](../media/image2.png) | ![](../media/image1.png) |
 |------------------------------------|------------------------------------|
 
 Once the service account is created we can export its credentials file,
@@ -33,6 +33,33 @@ The first step consists in creating a separate service account, then
 providing it with the necessary roles for further deployments tasks. The
 script used for that end is referenced under :
 [[https://github.com/Aitbytes/Projet-Long-Infra/tree/main/PrepareAccounts]](https://github.com/Aitbytes/Projet-Long-Infra/tree/main/PrepareAccounts)
+
+This Terraform script initially defines input variables user_emails and
+project_id, which are leveraged throughout the configuration.
+
+The provider block specifies the Google Cloud provider, using
+credentials stored locally to authenticate and interact with the
+specified project and region.
+
+At the core of this script is the creation and management of a Google
+Cloud service account, resrc_mgr_service_account, which is designed to
+handle various administrative roles within a project. This is achieved
+using google_service_account, ensuring that the account is correctly set
+up with a unique ID and display name for clarity. The script then
+establishes IAM (Identity and Access Management) bindings using both
+local sets and dynamic iteration over user emails and predefined roles,
+thereby granting the necessary permissions to operate Google Cloud\'s
+compute, storage, and other services. The google_project_iam_member
+resources dynamically bind roles to each user specified, ensuring robust
+access control mechanisms. For enhanced control, the service account
+itself is granted essential roles through its own IAM bindings, which
+are generated for each role locally defined. Notably, the script further
+ensures that user accounts receive roles such as Service Account User
+and Service Account Admin, providing them the capability to manage and
+utilize the service account efficiently. This comprehensive approach
+simplifies the delegation of permissions, ensuring that the necessary
+configurations can be applied systematically across any number of users
+and roles within a project.
 
 Simultaneously it provides each team mate with the identical rôles.
 
