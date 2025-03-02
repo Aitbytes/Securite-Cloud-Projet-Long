@@ -140,11 +140,14 @@ Access management become increasingly crucial in cloud environments.
 
 In an on-premise environment, data access is often based on a defined
 network perimeter, with more static controls, limiting opportunistic
-attacks that can happen in cloud environments which benefit from broad
+attacks that can happen in cloud environments caracterized by broad
 network access.
 
-Meanwhile, Slower, controlled deployment limits the risk of rapid
-exploitation, but also prevents rapid reaction to threats.
+Meanwhile, faster deployment increases the risk of rapid exploitation,
+while simultaneously enabling rapid reaction to threats.
+
+Finally, logging and monitoring become easier to centralise in a cloud
+environment, facilitating rapid threat detection.
 
 ### Vulnerabilities
 
