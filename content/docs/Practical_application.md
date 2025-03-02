@@ -15,12 +15,12 @@ We start by creating a google cloud project :
 We proceed to the IAM section to create a service account for managing
 the IAM policies.
 
-| ![](../media/image3.png) | ![](../media/image2.png) |
+| ![](../media/image2.png) | ![](../media/image3.png) |
 |------------------------------------|------------------------------------|
 
 Once the service account is created we can export its credentials file,
-which will be the key to automating all the remaining configuration with
-IaC.
+which will be the key to automating all the remaining configuration
+using IaC.
 
 All the configuration is referenced under in this repo :
 [[https://github.com/Aitbytes/Projet-Long-Infra/]](https://github.com/Aitbytes/Projet-Long-Infra/)
